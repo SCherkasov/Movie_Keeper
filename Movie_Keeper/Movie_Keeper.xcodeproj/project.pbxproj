@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A2AAD62209BB3CE00936E10 /* InstructionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AAD61209BB3CE00936E10 /* InstructionPageViewController.swift */; };
 		8A76B971209B872E002536FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76B970209B872E002536FA /* AppDelegate.swift */; };
 		8A76B978209B8731002536FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A76B977209B8731002536FA /* Assets.xcassets */; };
 		8A76B97B209B8731002536FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76B979209B8731002536FA /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A2AAD61209BB3CE00936E10 /* InstructionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionPageViewController.swift; sourceTree = "<group>"; };
 		8A76B96D209B872E002536FA /* Movie_Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie_Keeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A76B970209B872E002536FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A76B977209B8731002536FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				8A76B988209B87DF002536FA /* DetailMovieViewController.swift */,
 				8A76B98A209B87E5002536FA /* DetailMovieView2TableViewCell.swift */,
 				8A76B98C209B881E002536FA /* AddNewMovieTableViewController.swift */,
+				8A2AAD61209BB3CE00936E10 /* InstructionPageViewController.swift */,
 				8A76B9B2209B8888002536FA /* CoreDataStack.swift */,
 				8A76B9AF209B8876002536FA /* Movie.xcdatamodeld */,
 				8A76B982209B8758002536FA /* Main.storyboard */,
@@ -158,6 +161,7 @@
 				8A76B985209B87AB002536FA /* MovieTableViewController.swift in Sources */,
 				8A76B971209B872E002536FA /* AppDelegate.swift in Sources */,
 				8A76B9B1209B8877002536FA /* Movie.xcdatamodeld in Sources */,
+				8A2AAD62209BB3CE00936E10 /* InstructionPageViewController.swift in Sources */,
 				8A76B98D209B881E002536FA /* AddNewMovieTableViewController.swift in Sources */,
 				8A76B987209B87B7002536FA /* MovieTableViewCell.swift in Sources */,
 				8A76B98B209B87E5002536FA /* DetailMovieView2TableViewCell.swift in Sources */,
