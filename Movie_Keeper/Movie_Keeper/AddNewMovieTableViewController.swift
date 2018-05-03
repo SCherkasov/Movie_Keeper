@@ -22,7 +22,7 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
         if newTitleTexfield.text == "" || newGenreTextField.text == "" || newYearTextField.text == "" {
-            print("Заполните все поля")
+            print("Fill in all fields")
         } else {
             //get to the context of CoreData
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
@@ -37,15 +37,14 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
                 }
                 do {
                     try context.save()
-                    print("Сохраненно!")
+                    print("Saved!")
                 } catch let error as NSError{
-                    print("Сохранить не удалось \(error) | \(error.userInfo)")
+                    print("Save failed \(error) | \(error.userInfo)")
                 }
             }
             
             self.navigationController?.dismiss(animated: true, completion: nil)
-            
-            //performSegue(withIdentifier: "saveSegue", sender: self)
+
         }
     }
     
@@ -64,17 +63,17 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
         
         //Chosing the source of taking photo
         if indexPath.row == 0 {
-            let alertController = UIAlertController(title: "Источник фото", message: nil, preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: "Source photo", message: nil, preferredStyle: .actionSheet)
             
-            let cameraAction = UIAlertAction(title: "Камера", style: .default) { (action) in
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
                 self.choosePhoto(by: .camera)
             }
             
-            let pholoLibAction = UIAlertAction(title: "Фото", style: .default) { (action) in
+            let pholoLibAction = UIAlertAction(title: "Photo library", style: .default) { (action) in
                 self.choosePhoto(by: .photoLibrary)
             }
             
-            let cancelAction = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             alertController.addAction(cameraAction)
             alertController.addAction(pholoLibAction)

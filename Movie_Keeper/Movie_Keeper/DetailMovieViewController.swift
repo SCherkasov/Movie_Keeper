@@ -40,7 +40,7 @@ class DetailMovieViewController: UIViewController, UITableViewDataSource, UITabl
         cell.titleLabelDetail.text = movies?.title
         cell.genreLabelDetail.text = movies?.genre
         cell.yearLabelDetail.text = movies?.year
-        cell.descriptionTextViewDetail.text = movies?.description
+        cell.descriptionTextViewDetail.text = movies?.textAbout
         
         return cell
     }

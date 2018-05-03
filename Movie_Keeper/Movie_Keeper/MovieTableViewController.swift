@@ -46,7 +46,7 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         tableView.tableHeaderView = searchBarController.searchBar
         
         searchBarController.searchBar.delegate = self
-        searchBarController.searchBar.barTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        searchBarController.searchBar.barTintColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         searchBarController.searchBar.tintColor = .white
         
         //Canceling the search controller to the next screen
@@ -160,6 +160,7 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
                 }
             }
         }
+        delete.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         return [delete]
     }
     

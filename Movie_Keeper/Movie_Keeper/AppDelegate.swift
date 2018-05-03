@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //status bar appearance
         let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
-        statusBarView.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        statusBarView.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         self.window?.rootViewController?.view.insertSubview(statusBarView, at: 1)
         
         if let barFont = UIFont(name: "AppleSDGothicNeo-Light", size: 24) { //create personal font
