@@ -73,10 +73,17 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
                 self.choosePhoto(by: .photoLibrary)
             }
             
+            let linkAction = UIAlertAction(title: "imdb.com", style: .default) { (action) in
+                if let url = NSURL(string: "https://www.imdb.com/?ref_=nv_home") {
+                    UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+                }
+            }
+            
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             alertController.addAction(cameraAction)
             alertController.addAction(pholoLibAction)
+            alertController.addAction(linkAction)
             alertController.addAction(cancelAction)
             
             present(alertController, animated: true, completion: nil)
