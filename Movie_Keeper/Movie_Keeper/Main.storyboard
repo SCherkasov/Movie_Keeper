@@ -13,13 +13,13 @@
         <!--MovieKeeper-->
         <scene sceneID="dfc-ss-FHP">
             <objects>
-                <tableViewController id="3k1-BG-d76" customClass="MovieTableViewController" customModule="MovieKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3k1-BG-d76" customClass="MovieTableViewController" customModule="Movie_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="173" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ucc-mF-mVj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="173" id="dVo-Sp-RLG" customClass="MovieTableViewCell" customModule="MovieKeeper" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="173" id="dVo-Sp-RLG" customClass="MovieTableViewCell" customModule="Movie_Keeper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVo-Sp-RLG" id="3Jo-kh-7fb">
@@ -108,7 +108,7 @@
         <!--Detail Movie View Controller-->
         <scene sceneID="tb5-zE-DMp">
             <objects>
-                <viewController id="lAm-qF-EWS" customClass="DetailMovieViewController" customModule="MovieKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lAm-qF-EWS" customClass="DetailMovieViewController" customModule="Movie_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m2D-3A-AQo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,12 +116,12 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UwN-Zt-kFi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dcu-JM-ZE8">
+                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" id="dcu-JM-ZE8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="288"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" rowHeight="283" id="V4h-Qk-bUW" customClass="DetailMovieView2TableViewCell" customModule="MovieKeeper" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" rowHeight="283" id="V4h-Qk-bUW" customClass="DetailMovieView2TableViewCell" customModule="Movie_Keeper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="316" width="375" height="283"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V4h-Qk-bUW" id="zgW-DT-Gkf">
@@ -205,7 +205,7 @@
         <!--Add New Movie Table View Controller-->
         <scene sceneID="60p-n9-O32">
             <objects>
-                <tableViewController id="Gwi-wG-qyI" customClass="AddNewMovieTableViewController" customModule="MovieKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Gwi-wG-qyI" customClass="AddNewMovieTableViewController" customModule="Movie_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3iz-mM-xKK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -405,6 +405,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="empty" width="584" height="780"/>
         <image name="forsage" width="631" height="1000"/>
     </resources>
 </document>
