@@ -9,14 +9,12 @@
 import UIKit
 
 class DetailMovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-
-    @IBOutlet weak var imageDetail: UIImageView!
     
+    @IBOutlet weak var imageDetail: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     var movies: Movie?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +24,6 @@ class DetailMovieViewController: UIViewController, UITableViewDataSource, UITabl
         title = movies!.title //title for nav bar
         
         imageDetail.image = UIImage(data: movies!.image as! Data)
-      
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,7 +36,6 @@ class DetailMovieViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailMovieView2TableViewCell
-        
         
         cell.titleLabelDetail.text = movies?.title
         cell.genreLabelDetail.text = movies?.genre

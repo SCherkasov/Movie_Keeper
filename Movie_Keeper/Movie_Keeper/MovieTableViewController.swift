@@ -16,14 +16,12 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
     
     var movie: [Movie] = []
     
-    //fetchResultController удобный для работы с TableView!
+    //fetchResultController usefull in work with TableView!
     var fetchResultController: NSFetchedResultsController<Movie>!
     
-    //dismiss from New Etery Controller
+    //dismiss from New Movie Controller
     @IBAction func close(segue: UIStoryboardSegue) {
-        
     }
-    
     
     //hide nav bar on swipe
     override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +39,6 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self sizing cells
-        // закоментил тут:
-       // tableView.estimatedRowHeight = 85
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        
         //search bar View
         searchBarController = UISearchController(searchResultsController: nil)
         searchBarController.searchResultsUpdater = self
@@ -56,7 +49,7 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         searchBarController.searchBar.barTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         searchBarController.searchBar.tintColor = .white
         
-        //отмена перехода search controller на следующий экран
+        //Canceling the search controller to the next screen
         definesPresentationContext = true
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) //changing the back button of nav VC
@@ -68,7 +61,7 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultController.delegate = self //!!!!!
+            fetchResultController.delegate = self
             
             do {
                 try fetchResultController.performFetch()
@@ -76,9 +69,7 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
-            
         }
-        
     }
     
     // MARK: - Fetch results controller Delegate
@@ -102,7 +93,6 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         default:
             tableView.reloadData()
         }
-        
         movie = controller.fetchedObjects as! [Movie]
     }
     
@@ -144,13 +134,9 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         //MARK: - Represent info in the Cell
         
         cell.posterImage.image = UIImage(data: movie.image as! Data)
-        
         cell.titleLabel.text = movie.title
-        
         cell.genreLabel.text = movie.genre
-        
         cell.yearLabel.text = movie.year
-        
         cell.descriptionTextView.text = movie.textAbout
         
         return cell

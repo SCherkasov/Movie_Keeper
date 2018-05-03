@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailMovieView2TableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabelDetail: UILabel!
     @IBOutlet weak var genreLabelDetail: UILabel!
     @IBOutlet weak var yearLabelDetail: UILabel!

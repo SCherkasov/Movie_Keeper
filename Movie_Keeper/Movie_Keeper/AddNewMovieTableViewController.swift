@@ -19,34 +19,33 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
     // editing = new
     var newMovie: Movie?
     
-    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
-            if newTitleTexfield.text == "" || newGenreTextField.text == "" || newYearTextField.text == "" {
-                print("Заполните все поля")
-            } else {
-                //добираемся до контекста кор даты
-                if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
-                    let movie = Movie(context: context)
-                    movie.title = newTitleTexfield.text
-                    movie.genre = newGenreTextField.text
-                    movie.year = newYearTextField.text
-                    movie.textAbout = newDescriptionTextView.text
-                    
-                    if let image = newImage.image {
-                        movie.image = UIImagePNGRepresentation(image) as! Data
-                    }
-                    do {
-                        try context.save()
-                        print("Сохраненно!")
-                    } catch let error as NSError{
-                        print("Сохранить не удалось \(error) | \(error.userInfo)")
-                    }
+        if newTitleTexfield.text == "" || newGenreTextField.text == "" || newYearTextField.text == "" {
+            print("Заполните все поля")
+        } else {
+            //get to the context of CoreData
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+                let movie = Movie(context: context)
+                movie.title = newTitleTexfield.text
+                movie.genre = newGenreTextField.text
+                movie.year = newYearTextField.text
+                movie.textAbout = newDescriptionTextView.text
+                
+                if let image = newImage.image {
+                    movie.image = UIImagePNGRepresentation(image) as! Data
                 }
-                performSegue(withIdentifier: "saveSegue", sender: self)
+                do {
+                    try context.save()
+                    print("Сохраненно!")
+                } catch let error as NSError{
+                    print("Сохранить не удалось \(error) | \(error.userInfo)")
+                }
             }
+            performSegue(withIdentifier: "saveSegue", sender: self)
+        }
     }
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -55,7 +54,6 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
         newImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
         newImage.contentMode = .scaleAspectFill
         newImage.clipsToBounds = true
-        //close after setting image
         dismiss(animated: true, completion: nil)
     }
     
@@ -84,8 +82,7 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-        
-    //функция выбора фотографии камера/библиотека
+    
     func choosePhoto(by type: UIImagePickerControllerSourceType) {
         if UIImagePickerController.isSourceTypeAvailable(type) {
             let imagePicker = UIImagePickerController()
@@ -95,28 +92,16 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
             present(imagePicker, animated: true, completion: nil)
         }
     }
-        
-      
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 5
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return 1
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 }
