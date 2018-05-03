@@ -42,7 +42,10 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
                     print("Сохранить не удалось \(error) | \(error.userInfo)")
                 }
             }
-            performSegue(withIdentifier: "saveSegue", sender: self)
+            
+            self.navigationController?.dismiss(animated: true, completion: nil)
+            
+            //performSegue(withIdentifier: "saveSegue", sender: self)
         }
     }
     
