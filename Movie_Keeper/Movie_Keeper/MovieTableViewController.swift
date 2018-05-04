@@ -32,7 +32,17 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
     //search bar funcs
     func filterContentFor(searchText text: String) {
         filteredResultsArray = movie.filter{ (movie) -> Bool in
-            return (movie.title!.lowercased().contains(text.lowercased()))
+            var sortTitle = false
+            var sortGenre = false
+            var sortYear = false
+            var sortDescription = false
+            
+            sortTitle = String(describing: movie.title ?? "NA").contains(text.lowercased())
+            sortGenre = String(describing: movie.genre ?? "NA").contains(text.lowercased())
+            sortYear = String(describing: movie.year ?? "NA").contains(text.lowercased())
+            sortDescription = String(describing: movie.textAbout ?? "NA").contains(text.lowercased())
+            
+            return sortTitle || sortGenre || sortYear || sortDescription
         }
     }
     
@@ -56,8 +66,8 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         
         //fetching saved Core Data
         let fetchedRequest: NSFetchRequest<Movie> = Movie.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
-        fetchedRequest.sortDescriptors = [sortDescriptor]
+        let titleSortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchedRequest.sortDescriptors = [titleSortDescriptor]
         
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)

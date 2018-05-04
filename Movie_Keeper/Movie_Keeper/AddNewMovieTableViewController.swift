@@ -62,7 +62,7 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //Chosing the source of taking photo
-        if indexPath.row == 0 {
+        if indexPath.section == 0 && indexPath.row == 0 {
             let alertController = UIAlertController(title: "Source photo", message: nil, preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
