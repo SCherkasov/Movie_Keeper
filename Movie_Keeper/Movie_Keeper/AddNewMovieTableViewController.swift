@@ -53,7 +53,7 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        newImage.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        newImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         newImage.contentMode = .scaleAspectFill
         newImage.clipsToBounds = true
         dismiss(animated: true, completion: nil)
