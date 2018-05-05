@@ -83,6 +83,19 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let userDefaults = UserDefaults.standard
+        let wasWatched = userDefaults.bool(forKey: "wasWatched")
+        
+        guard !wasWatched else { return }
+        
+        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController {
+            present(pageViewController, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Fetch results controller Delegate
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
