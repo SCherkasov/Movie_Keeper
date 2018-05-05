@@ -11,7 +11,7 @@ import UIKit
 class PageViewController: UIPageViewController {
 
     
-    var textArray = ["Tab the add button to create the new movie to your collection", "fill in all the fields following steps 1-5 and then click the save button (spep 6). Also, if you change your mind - click the cancel (step 7)", "If you suddenly want to delete a movie - just make a swipe to the left in the row and click the delete button", "When your movie collection becomes very huge, you can just use the search field. The search works by the name of the movie, genre, year or simply by any word from the description"]
+    var textArray = ["Tab the add button to create the new movie in your collection", "fill in all the fields following steps 1-5 and then click the save button (spep 6). Also, if you change your mind - click the cancel button (step 7)", "if you suddenly want to delete a movie - just make a swipe to the left in the row and click the delete button", "when your movie collection becomes very huge, you can just use the search field. The search works by the name of the movie, genre, year or simply by any word from the description"]
     
     var imageArray = ["pic1", "pic2", "pic3", "pic4"]
     

@@ -169,8 +169,8 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            self.movie.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            //self.movie.remove(at: indexPath.row)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
             
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
                 
