@@ -23,12 +23,6 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
     @IBAction func close(segue: UIStoryboardSegue) {
     }
     
-    //hide nav bar on swipe
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.hidesBarsOnSwipe = false
-        //navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     //search bar funcs
     func filterContentFor(searchText text: String) {
         filteredResultsArray = movie.filter{ (movie) -> Bool in
@@ -46,6 +40,12 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         }
     }
     
+    
+    //hide nav bar on swipe
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,12 +55,12 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         searchBarController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchBarController.searchBar
         
+        //Canceling the search controller to the next screen
+        definesPresentationContext = true
+        
         searchBarController.searchBar.delegate = self
         searchBarController.searchBar.barTintColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         searchBarController.searchBar.tintColor = .white
-        
-        //Canceling the search controller to the next screen
-        definesPresentationContext = true
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) //changing the back button of nav VC
         

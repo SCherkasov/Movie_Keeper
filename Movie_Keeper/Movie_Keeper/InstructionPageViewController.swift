@@ -16,7 +16,6 @@ class InstructionPageViewController: UIPageViewController,
     
     static let TurnOnButtonIdentifier = "UserGuideTurnOnButton"
     
-
     @IBOutlet weak var actionButton: UIBarButtonItem!
     
     var pages = [UIViewController]()

@@ -368,7 +368,7 @@
         <!--Instruction Page View Controller-->
         <scene sceneID="dqu-hL-sky">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RLf-Bd-ucg" customClass="InstructionPageViewController" customModule="Movie_Keeper" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="InstructionPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RLf-Bd-ucg" customClass="InstructionPageViewController" customModule="Movie_Keeper" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ihA-mp-0rq">
                         <barButtonItem key="rightBarButtonItem" id="hLp-c3-QkN">
                             <connections>
@@ -563,7 +563,7 @@
         <!--Navigation Controller-->
         <scene sceneID="W3k-ZB-bFw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S91-y5-fP2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="S91-y5-fP2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x6v-mS-1YV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
