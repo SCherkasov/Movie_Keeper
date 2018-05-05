@@ -63,7 +63,7 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
         
         //Chosing the source of taking photo
         if indexPath.section == 0 && indexPath.row == 0 {
-            let alertController = UIAlertController(title: "Source photo", message: nil, preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
                 self.choosePhoto(by: .camera)
@@ -73,17 +73,10 @@ class AddNewMovieTableViewController: UITableViewController, UIImagePickerContro
                 self.choosePhoto(by: .photoLibrary)
             }
             
-            let linkAction = UIAlertAction(title: "imdb.com", style: .default) { (action) in
-                if let url = NSURL(string: "https://www.imdb.com/?ref_=nv_home") {
-                    UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-                }
-            }
-            
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             alertController.addAction(cameraAction)
             alertController.addAction(pholoLibAction)
-            alertController.addAction(linkAction)
             alertController.addAction(cancelAction)
             
             present(alertController, animated: true, completion: nil)
