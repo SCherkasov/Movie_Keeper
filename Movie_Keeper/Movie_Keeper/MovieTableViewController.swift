@@ -37,10 +37,10 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
             var sortYear = false
             var sortDescription = false
             
-            sortTitle = String(describing: movie.title ?? "NA").contains(text.lowercased())
-            sortGenre = String(describing: movie.genre ?? "NA").contains(text.lowercased())
+            sortTitle = movie.title?.lowercased().contains(text.lowercased()) ?? false
+            sortGenre = movie.genre?.lowercased().contains(text.lowercased()) ?? false
             sortYear = String(describing: movie.year ?? "NA").contains(text.lowercased())
-            sortDescription = String(describing: movie.textAbout ?? "NA").contains(text.lowercased())
+            sortDescription = movie.textAbout?.lowercased().contains(text.lowercased()) ?? false
             
             return sortTitle || sortGenre || sortYear || sortDescription
         }
@@ -67,6 +67,7 @@ class MovieTableViewController: UITableViewController, NSFetchedResultsControlle
         //fetching saved Core Data
         let fetchedRequest: NSFetchRequest<Movie> = Movie.fetchRequest()
         let titleSortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+     
         fetchedRequest.sortDescriptors = [titleSortDescriptor]
         
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
